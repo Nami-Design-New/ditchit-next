@@ -24,9 +24,13 @@ const ChooseValueModal = ({
   onImageSelect,
   loading,
 }: ChooseValueModalProps) => {
-  const  t  = useTranslations("common");
+  const t = useTranslations("common");
   const cameraInputRef = useRef<HTMLInputElement | null>(null);
   const galleryInputRef = useRef<HTMLInputElement | null>(null);
+
+  const handleGalleryClick = () => {
+    galleryInputRef.current?.click();
+  };
 
   const handleCameraClick = async () => {
     try {
@@ -35,12 +39,9 @@ const ChooseValueModal = ({
       // If camera is available, trigger camera input
       cameraInputRef.current?.click();
     } catch {
-      toast.error("This device does not support camera.");
+      // toast.error("This device does not support camera.");
+      handleGalleryClick();
     }
-  };
-
-  const handleGalleryClick = () => {
-    galleryInputRef.current?.click();
   };
 
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {

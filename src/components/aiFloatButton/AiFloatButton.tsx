@@ -4,6 +4,7 @@ import { useState } from "react";
 import ChooseValueModal from "./ChooseValueModal";
 import ResultValueModal from "./ResultValueModal";
 import Image from "next/image";
+import clientAxios from "@/lib/axios/clientAxios";
 
 interface PriceData {
   value: number | null;
@@ -37,24 +38,29 @@ const AiFloatButton = () => {
     try {
       const formData = new FormData();
       formData.append("image", file);
-      formData.append("country", "EG"); //😒
+      // formData.append("country", country || "");
 
-      const response = await fetch("/api/home/getAverageByImage", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await clientAxios.post(
+        "/home/getAverageByImage",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
 
-      if (!response.ok) {
-        throw new Error("Failed to process image");
-      }
-
-      const result = await response.json();
-      setApiData(result?.data);
+      setApiData(response?.data?.data);
       setShowModalAi(false);
       setShowResultModal(true);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "An error occurred");
-      console.error("Error processing image:", err);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+        console.error("Error processing image:", err);
+      } else {
+        setError("An error occurred");
+        console.error("Error processing image:", err);
+      }
     } finally {
       setLoading(false);
     }

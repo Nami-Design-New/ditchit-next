@@ -21,12 +21,11 @@ serverAxios.interceptors.request.use(async (config) => {
   const country = locale?.split("-")[1];
   const countryIdCookie = (await cookies()).get("countryId")?.value;
   // console.log("countryIDCOookie" , countryIdCookie);
-  
+
   const normalizedLocale =
     baseLocale === "zh" ? "zh-CN" : baseLocale === "pt" ? "pt-BR" : baseLocale;
 
   config.headers["lang"] = normalizedLocale;
-  // Prefer countryId from cookie if available; otherwise derive from locale as before
   config.headers["country"] =
     countryIdCookie || COUNTIRES_DATA.find((c) => c.code === country)?.id || 1;
   config.headers.Authorization = token;
@@ -36,10 +35,10 @@ serverAxios.interceptors.request.use(async (config) => {
 
 serverAxios.interceptors.response.use(
   (response) => response,
-   (error) => {
-       if((error as AxiosError<{ message?: string }>).response?.status === 401) {
-           redirect('/api/auth/logout');
-       }
+  (error) => {
+    if ((error as AxiosError<{ message?: string }>).response?.status === 401) {
+      redirect("/api/auth/logout");
+    }
     return Promise.reject(error);
   }
 );

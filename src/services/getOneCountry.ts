@@ -7,6 +7,7 @@ export async function getOneCountry(lang: string, countryId: string) {
     method: "GET",
     headers: {
       lang: lang === "zh" ? "zh-CN" : lang === "pt" ? "pt-BR" : lang,
+      country: countryId || "",
     },
     cache: "no-store",
   });

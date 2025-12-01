@@ -10,6 +10,8 @@ export async function saveLocationFilters(data: {
   address?: string;
   delivery_method?: string;
   countryId?: string;
+  country?: string;
+  // verifyEmail:string
 }) {
   const store = await cookies();
 
@@ -17,6 +19,8 @@ export async function saveLocationFilters(data: {
   if (data.longitude) store.set("longitude", data.longitude, { path: "/" });
   if (data.address) store.set("address", data.address, { path: "/" });
   if (data.countryId) store.set("countryId", data.countryId, { path: "/" });
+  if (data.country) store.set("country", data.country, { path: "/" }); 
+  // if (data.verifyEmail) store.set("verifyEmail", data.verifyEmail, { path: "/" }); 
   if (data.kilometers)
     store.set("kilometers", String(data.kilometers), { path: "/" });
   if (data.zip_code)

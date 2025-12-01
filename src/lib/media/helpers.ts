@@ -1,3 +1,5 @@
+import { getCookie } from "../utils";
+
 export type FileInfo = {
   name: string;
   size: number;
@@ -11,7 +13,7 @@ export const getFileInfoFromBlob = (file: File): Promise<FileInfo> => {
     url: URL.createObjectURL(file),
   });
 };
-
+const countryId = getCookie("countryId");
 export const getFileInfoFromUrl = async (
   url: string,
   fileName?: string
@@ -21,6 +23,7 @@ export const getFileInfoFromUrl = async (
       method: "HEAD",
       headers: {
         Accept: "*/*",
+        country: countryId || "",
       },
     });
 

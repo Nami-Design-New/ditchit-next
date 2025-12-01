@@ -40,7 +40,7 @@ export default function SendCodeForm() {
     try {
       const res = await sendCode(values.email);
 
-      console.log(res);
+      // console.log(res);
       if (res.code === 200) {
         document.cookie = `verifyEmail=${values.email}; path=/; max-age=3600`;
         setEmail(values.email);

@@ -14,6 +14,7 @@ import FormFooterLink from "@/features/auth/components/FormFooterLink";
 import Image from "next/image";
 import SocialAuth from "./SocialAuth";
 import { saveLocationFilters } from "@/features/listing/action";
+import { setCookie } from "@/lib/utils";
 
 export default function LoginForm() {
   const [isPending, setIsPending] = useState<boolean>(false);
@@ -43,15 +44,18 @@ export default function LoginForm() {
       if (res.code === 200) {
         setUser(res.data.user);
         setToken(res.data.auth.token);
-        console.log("login response ", res);
-        
+        // console.log("login response ", res);
+
         saveLocationFilters({
           zip_code: String(res.data.user.country?.zip_code),
           latitude: res.data.user.country?.center_lat,
           longitude: res.data.user.country?.center_lng,
           address: res.data.user.address,
           countryId: res.data.user.country.id,
+          country: res.data.user.country.code,
+          // verifyEmail:res.data.user.email,
         });
+        setCookie("verifyEmail", res.data.user.email);
         router.push("/");
         toast.success(t("login_success"));
       } else {

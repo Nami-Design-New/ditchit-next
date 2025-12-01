@@ -83,7 +83,7 @@ const ResultValueModal = ({
                     alt="product image"
                     width={500}
                     height={300}
-                    className="w-full h-[340px] object-cover rounded-lg"
+                    className="w-full h-[380px]  rounded-lg"
                   />
                 )}
               </div>

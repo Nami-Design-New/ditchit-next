@@ -1,3 +1,4 @@
+import { getCookie } from "@/lib/utils";
 import { API_URL } from "@/utils/constants";
 
 export type Setting = {
@@ -11,10 +12,13 @@ export type Setting = {
 };
 
 export async function getSettings(lang: string): Promise<{ data: Setting }> {
+  const countryId = getCookie("countryId");
+
   const response = await fetch(`${API_URL}/main/setting`, {
     method: "GET",
     headers: {
       lang: lang === "zh" ? "zh-CN" : lang === "pt" ? "pt-BR" : lang,
+      country: countryId || "",
     },
     next: { revalidate: false },
     cache: "force-cache",
