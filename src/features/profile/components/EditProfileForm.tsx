@@ -80,9 +80,9 @@ export default function EditProfileForm({
     if (!exists) {
       // Ensure the object satisfies the Country type (provide missing center_lat/center_lng)
       const countryToAdd = {
-        ...(user.country as any),
-        center_lat: (user.country as any).center_lat ?? 0,
-        center_lng: (user.country as any).center_lng ?? 0,
+        ...(user.country as  Partial<Country>),
+        center_lat: (user.country as  Partial<Country>).center_lat ?? 0,
+        center_lng: (user.country as  Partial<Country>).center_lng ?? 0,
       } as Country;
 
       setCountryOptions((prev) => [...prev, countryToAdd]);
