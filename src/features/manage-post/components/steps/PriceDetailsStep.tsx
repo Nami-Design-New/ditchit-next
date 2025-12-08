@@ -44,16 +44,15 @@ export default function PriceDetailsStep({
 
     const isValid = await trigger("price");
     if (!selectedDelivery) {
-      setDeliveryError(true)
-      return
-    }else{
-      setDeliveryError(false)
+      setDeliveryError(true);
+      return;
+    } else {
+      setDeliveryError(false);
     }
 
     if (isValid) {
       if (postId) {
         handleSubmit(onSubmit)();
-        
       } else {
         setShow(true);
       }
@@ -133,7 +132,11 @@ export default function PriceDetailsStep({
             </label>
           ))}
         </div>
-        {deliveryError && <p className="text-red-500 mt-2 text-xs">{t("choose_delivery_methods")}</p>}
+        {deliveryError && (
+          <p className="text-red-500 mt-2 text-xs">
+            {t("choose_delivery_methods")}
+          </p>
+        )}
       </div>
 
       <FormFooter
