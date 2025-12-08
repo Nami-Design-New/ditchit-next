@@ -3,6 +3,7 @@ export interface Category {
   title: string;
   image: string;
   is_condition: boolean;
+  type?: string;
   options: {
     id: number;
     title: string;

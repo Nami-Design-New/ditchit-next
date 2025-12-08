@@ -20,7 +20,7 @@ export const postFormDataSchema = z.object({
     .or(z.literal("")),
   image: fileOrStringSchema,
   images: z.array(fileOrStringSchema).optional().or(z.literal("")),
-  condition: z.string(),
+  condition: z.string().nullable().optional(),
   zip_code: z
     .string()
     .regex(/^[0-9]{5}$/, "zipcode_validation")

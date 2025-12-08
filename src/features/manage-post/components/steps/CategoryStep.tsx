@@ -5,7 +5,7 @@ import { useFormContext } from "react-hook-form";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import FormFooter from "../FormFooter";
-
+import { useCategoryStore } from "../../store";
 
 interface CategoryStepProps {
   next: () => void;
@@ -16,6 +16,7 @@ export default function CategoryStep({ next, categories }: CategoryStepProps) {
   const { watch, setValue, trigger } = useFormContext();
   const selectedCategory = watch("category_id");
   const t = useTranslations("manage_post");
+  const { setSelectedCategory } = useCategoryStore();
 
   // const searchParams = useSearchParams();
   // const categoryIdUrl = searchParams.get("categoryIdUrl");
@@ -23,8 +24,11 @@ export default function CategoryStep({ next, categories }: CategoryStepProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const isValid = await trigger("category_id");
+    const selected = categories.find((cat) => cat.id === selectedCategory);
+    if (!isValid) return;
 
-    if (isValid) {
+    if (selected) {
+      setSelectedCategory(selected);
       next();
     }
   };

@@ -53,6 +53,7 @@ export default function PriceDetailsStep({
     if (isValid) {
       if (postId) {
         handleSubmit(onSubmit)();
+        
       } else {
         setShow(true);
       }
