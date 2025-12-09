@@ -137,6 +137,7 @@ export default function PriceDetailsStep({
       </div>
 
       <FormFooter
+      
         back={back}
         nextBtnText={postId ? t("update_post") : t("confirm_publish")}
       />
