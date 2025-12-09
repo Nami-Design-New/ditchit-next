@@ -51,14 +51,16 @@ export default function BoostAndPublish({
         <div className="flex items-center justify-end gap-2 border-t border-[var(--lightBorderColor)] mb-0 pt-4">
           <button
             className="customBtn rounded-[12px] w-fit md:px-12 px-8 m-0"
-            onClick={addPost}
+            type="button" 
+            onClick={() => addPost()}
             disabled={isSaving}
           >
             {isSaving ? t("loading") : t("skip_and_publish")}
           </button>
 
           <button
-            onClick={addAndPromote}
+            type="button"
+            onClick={() => addAndPromote()}
             disabled={isPromoting}
             className="bg-[var(--mainColor)] text-white rounded-[12px] w-fit px-12 py-3 m-0 border border-[var(--mainColor)]"
           >

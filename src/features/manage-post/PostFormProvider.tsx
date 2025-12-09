@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { PostFormData, postFormDataSchema } from "./schema";
 import clientAxios from "@/lib/axios/clientAxios";
+import { useCategoryStore } from "./store";
 
 const PostFormContext = createContext<{
   step: number;
@@ -37,6 +38,7 @@ export default function PostFormProvider({
   type?: string;
   children: ReactNode;
 }) {
+  const { selectedCategory } = useCategoryStore();
   const [step, setStep] = useState(0);
   const router = useRouter();
   const t = useTranslations("manage_post");
@@ -82,9 +84,17 @@ export default function PostFormProvider({
   const handleSaveRequest = async (data: PostFormData) => {
     const endpoint = post?.id ? `/posts/${post.id}` : "/posts";
     const formData = new FormData();
+    console.log(selectedCategory);
 
     Object.entries(data).forEach(([key, value]) => {
       if (key === "image" || key === "images") return;
+      // if (key === "condition" && !selectedCategory?.is_condition) return;
+
+      if (
+        key === "condition" &&
+        (selectedCategory?.type == "service" || selectedCategory?.type == "job")
+      )
+        return;
 
       if (Array.isArray(value)) {
         value.forEach((item, index) => {
