@@ -132,6 +132,7 @@ export default function PriceDetailsStep({
             </label>
           ))}
         </div>
+        
         {deliveryError && (
           <p className="text-red-500 mt-2 text-xs">
             {t("choose_delivery_methods")}
@@ -140,7 +141,7 @@ export default function PriceDetailsStep({
       </div>
 
       <FormFooter
-      
+
         back={back}
         nextBtnText={postId ? t("update_post") : t("confirm_publish")}
       />
