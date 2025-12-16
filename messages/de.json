@@ -286,6 +286,12 @@
     "form_error": "Bitte füllen Sie die erforderlichen Felder korrekt aus.",
     "offline": "Du bist offline. Bitte überprüfen Sie Ihre Internetverbindung",
     "choose_delivery_methods": "Sie müssen die Versandart wählen"
+  ,
+    "salary": "Gehalt",
+    "job_type": "Jobtyp",
+    "job_salary_type": "Gehaltsart",
+    "job_type_error": "muss Jobtyp wählen",
+    "job_salary_type_error": "muss Gehaltsart wählen"
   },
   "ditchNote": {
     "title": "Einführung von Ditchit - Der ultimative lokale Marktplatz!",

@@ -286,6 +286,12 @@
     "form_error": "Vyplňte prosím správne povinné polia.",
     "offline": "Ste offline. Skontrolujte svoje internetové pripojenie",
     "choose_delivery_methods": "musíte zvoliť spôsob doručenia"
+  ,
+    "salary": "Mzda",
+    "job_type": "Typ práce",
+    "job_salary_type": "Typ mzdy",
+    "job_type_error": "musíte zvoliť typ práce",
+    "job_salary_type_error": "musíte zvoliť typ mzdy"
   },
   "ditchNote": {
     "title": "Predstavujeme Ditchit - Najlepší miestny trh!",

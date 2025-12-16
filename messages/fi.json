@@ -286,6 +286,12 @@
     "form_error": "Täytä vaaditut kentät oikein.",
     "offline": "Olet offline-tilassa. Tarkista Internet-yhteytesi",
     "choose_delivery_methods": "täytyy valita toimitustavat"
+  ,
+    "salary": "Palkka",
+    "job_type": "Työn tyyppi",
+    "job_salary_type": "Palkan tyyppi",
+    "job_type_error": "täytyy valita työn tyyppi",
+    "job_salary_type_error": "täytyy valita palkan tyyppi"
   },
   "ditchNote": {
     "title": "Esittelyssä Ditchit - Huippuluokan paikallinen markkinapaikka!",

@@ -286,6 +286,12 @@
     "form_error": "Molimo ispunite obavezna polja ispravno.",
     "offline": "Vi ste izvan mreže. Provjerite svoju internetsku vezu",
     "choose_delivery_methods": "mora odabrati načine dostave"
+  ,
+    "salary": "Plaća",
+    "job_type": "Vrsta posla",
+    "job_salary_type": "Vrsta plaće",
+    "job_type_error": "morate odabrati vrstu posla",
+    "job_salary_type_error": "morate odabrati vrstu plaće"
   },
   "ditchNote": {
     "title": "Upoznajte Ditchit - Ultimativna lokalna tržnica!",

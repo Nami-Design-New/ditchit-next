@@ -286,6 +286,12 @@
     "form_error": "Prosimo, da zahtevana polja pravilno izpolnite.",
     "offline": "Nisi povezan. Preverite internetno povezavo",
     "choose_delivery_methods": "mora izbrati načine dostave"
+  ,
+    "salary": "Plača",
+    "job_type": "Vrsta dela",
+    "job_salary_type": "Vrsta plače",
+    "job_type_error": "morate izbrati vrsto dela",
+    "job_salary_type_error": "morate izbrati vrsto plače"
   },
   "ditchNote": {
     "title": "Predstavljamo Ditchit - Najboljše lokalno tržnico!",

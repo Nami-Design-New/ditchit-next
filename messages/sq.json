@@ -286,6 +286,12 @@
     "form_error": "Ju lutemi plotësoni saktë fushat e kërkuara.",
     "offline": "Ju jeni jashtë linje. Ju lutemi kontrolloni lidhjen tuaj të internetit",
     "choose_delivery_methods": "duhet të zgjedhë metodat e dorëzimit"
+  ,
+    "salary": "Pagë",
+    "job_type": "Lloji i punës",
+    "job_salary_type": "Lloji i pagës",
+    "job_type_error": "duhet të zgjidhni llojin e punës",
+    "job_salary_type_error": "duhet të zgjidhni llojin e pagës"
   },
   "ditchNote": {
     "title": "Prezantojmë Ditchit - Tregu Lokal Më i Mirë!",

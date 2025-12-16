@@ -286,6 +286,13 @@
     "form_error": "Iltimos, kerakli maydonlarni to'g'ri to'ldiring.",
     "offline": "Siz oflaynsiz. Internetga ulanishingizni tekshiring",
     "choose_delivery_methods": "etkazib berish usullarini tanlashi kerak"
+  ,
+    "salary": "Maosh",
+    "job_type": "Ish turi",
+    "job_salary_type": "Maosh turi",
+    "job_type_error": "ish turini tanlashingiz kerak",
+    "job_salary_type_error": "maosh turini tanlashingiz kerak"
+
   },
   "ditchNote": {
     "title": "Ditchitni taqdim etamiz - Eng zo'r Mahalliy Bozor!",

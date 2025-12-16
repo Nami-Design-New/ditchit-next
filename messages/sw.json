@@ -286,6 +286,12 @@
     "form_error": "Tafadhali jaza shamba zinazohitajika kwa usahihi.",
     "offline": "Uko nje ya mtandao. Tafadhali angalia muunganisho wako wa mtandao",
     "choose_delivery_methods": "Lazima uchague njia za utoaji"
+  ,
+    "salary": "Mshahara",
+    "job_type": "Aina ya kazi",
+    "job_salary_type": "Aina ya mshahara",
+    "job_type_error": "lazima uchague aina ya kazi",
+    "job_salary_type_error": "lazima uchague aina ya mshahara"
   },
   "ditchNote": {
     "title": "Tunukuza Ditchit - Soko Lako la Kijiji Lisilo na Mlinganyo!",

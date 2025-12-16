@@ -286,6 +286,12 @@
     "form_error": "Ompliu correctament els camps obligatoris.",
     "offline": "Estàs fora de línia. Comproveu la vostra connexió a Internet",
     "choose_delivery_methods": "ha de triar els mètodes de lliurament"
+  ,
+    "salary": "Salari",
+    "job_type": "Tipus de feina",
+    "job_salary_type": "Tipus de salari",
+    "job_type_error": "has de triar el tipus de feina",
+    "job_salary_type_error": "has de triar el tipus de salari"
   },
   "ditchNote": {
     "title": "Presentant Ditchit - El mercat local definitiu!",

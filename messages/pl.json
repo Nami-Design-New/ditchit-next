@@ -286,6 +286,12 @@
     "form_error": "Proszę poprawnie wypełnić wymagane pola.",
     "offline": "Jesteś offline. Sprawdź swoje połączenie internetowe",
     "choose_delivery_methods": "należy wybrać metody dostawy"
+  ,
+    "salary": "Wynagrodzenie",
+    "job_type": "Rodzaj pracy",
+    "job_salary_type": "Rodzaj wynagrodzenia",
+    "job_type_error": "musisz wybrać rodzaj pracy",
+    "job_salary_type_error": "musisz wybrać rodzaj wynagrodzenia"
   },
   "ditchNote": {
     "title": "Przedstawiamy Ditchit - Ostateczny Lokalny Rynek!",

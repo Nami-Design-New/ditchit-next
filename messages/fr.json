@@ -286,6 +286,12 @@
     "form_error": "Veuillez remplir correctement les champs obligatoires.",
     "offline": "Vous êtes hors ligne. Veuillez vérifier votre connexion Internet",
     "choose_delivery_methods": "doit choisir les modes de livraison"
+  ,
+    "salary": "Salaire",
+    "job_type": "Type d'emploi",
+    "job_salary_type": "Type de salaire",
+    "job_type_error": "doit choisir le type d'emploi",
+    "job_salary_type_error": "doit choisir le type de salaire"
   },
   "ditchNote": {
     "title": "Présentation de Ditchit - Le Marché Local Ultime !",

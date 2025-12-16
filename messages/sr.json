@@ -286,6 +286,12 @@
     "form_error": "Молимо Вас да исправно попуните обавезна поља.",
     "offline": "Ви сте ван мреже. Проверите своју интернет везу",
     "choose_delivery_methods": "мора изабрати методе испоруке"
+  ,
+    "salary": "Plata",
+    "job_type": "Vrsta posla",
+    "job_salary_type": "Vrsta plate",
+    "job_type_error": "morate izabrati vrstu posla",
+    "job_salary_type_error": "morate izabrati vrstu plate"
   },
   "ditchNote": {
     "title": "Predstavljamo Ditchit - ultimativno lokalno tržište!",

@@ -286,6 +286,12 @@
     "form_error": "Zəhmət olmasa lazımi sahələri düzgün doldurun.",
     "offline": "Sən oflaynsan. Zəhmət olmasa internet bağlantınızı yoxlayın",
     "choose_delivery_methods": "Çatdırılma üsullarını seçməlidir"
+  ,
+    "salary": "Maaş",
+    "job_type": "İş növü",
+    "job_salary_type": "Maaş növü",
+    "job_type_error": "iş növünü seçməlisiniz",
+    "job_salary_type_error": "maaş növünü seçməlisiniz"
   },
   "ditchNote": {
     "title": "Ditchit - Ən Yaxşı Lokal Bazarla Tanış Olun!",

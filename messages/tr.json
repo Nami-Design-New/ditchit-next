@@ -286,6 +286,13 @@
     "form_error": "Lütfen gerekli alanları doğru bir şekilde doldurunuz.",
     "offline": "Çevrimdışısınız. Lütfen internet bağlantınızı kontrol edin",
     "choose_delivery_methods": "teslimat yöntemlerini seçmelisiniz"
+  ,
+    "salary": "Maaş",
+    "job_type": "İş türü",
+    "job_salary_type": "Maaş türü",
+    "job_type_error": "iş türünü seçmelisiniz",
+    "job_salary_type_error": "maaş türünü seçmelisiniz"
+
   },
   "ditchNote": {
     "title": "Ditchit'i Tanıtıyoruz - En İyi Yerel Pazar Yeri!",

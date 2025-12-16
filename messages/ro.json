@@ -286,6 +286,12 @@
     "form_error": "Vă rugăm să completați corect câmpurile obligatorii.",
     "offline": "Ești offline. Vă rugăm să vă verificați conexiunea la internet",
     "choose_delivery_methods": "trebuie să aleagă metodele de livrare"
+  ,
+    "salary": "Salariu",
+    "job_type": "Tip job",
+    "job_salary_type": "Tip salariu",
+    "job_type_error": "trebuie să alegeți tipul de job",
+    "job_salary_type_error": "trebuie să alegeți tipul de salariu"
   },
   "ditchNote": {
     "title": "Introducerea Ditchit - Piața Locală Ultimativă!",

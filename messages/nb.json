@@ -286,6 +286,12 @@
     "form_error": "Fyll ut de obligatoriske feltene riktig.",
     "offline": "Du er frakoblet. Sjekk internettforbindelsen din",
     "choose_delivery_methods": "må velge leveringsmåter"
+  ,
+    "salary": "Lønn",
+    "job_type": "Jobbtype",
+    "job_salary_type": "Lønnstype",
+    "job_type_error": "må velge jobbtype",
+    "job_salary_type_error": "må velge lønnstype"
   },
   "ditchNote": {
     "title": "Presenterer Ditchit - Det ultimate lokale markedet!",

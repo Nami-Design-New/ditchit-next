@@ -286,6 +286,13 @@
     "form_error": "Vänligen fyll i de obligatoriska fälten korrekt.",
     "offline": "Du är offline. Kontrollera din internetanslutning",
     "choose_delivery_methods": "måste välja leveranssätt"
+  ,
+    "salary": "Lön",
+    "job_type": "Jobbtyp",
+    "job_salary_type": "Löntyp",
+    "job_type_error": "måste välja jobbtyp",
+    "job_salary_type_error": "måste välja löntyp"
+
   },
   "ditchNote": {
     "title": "Introducerar Ditchit - Den ultimata lokala marknadsplatsen!",

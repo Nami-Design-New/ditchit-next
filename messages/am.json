@@ -286,6 +286,12 @@
     "form_error": "እባክዎን የሚፈለጉትን መስኮች በትክክል ይሙሉ.",
     "offline": "ከመስመር ውጭ ነዎት. እባክዎ የበይነመረብ ግንኙነትዎን ያረጋግጡ",
     "choose_delivery_methods": "የመላኪያ ዘዴዎችን መምረጥ አለበት"
+  ,
+    "salary": "ደመወዝ",
+    "job_type": "የስራ አይነት",
+    "job_salary_type": "የደመወዝ አይነት",
+    "job_type_error": "የስራ አይነት መምረጥ አለብዎት",
+    "job_salary_type_error": "የደመወዝ አይነት መምረጥ አለብዎት"
   },
   "ditchNote": {
     "title": "እንኳን ወደ Ditchit - ዋነኛው አካባቢ ገበያ እንኳን መጣችሁ!",

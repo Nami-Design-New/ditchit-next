@@ -286,6 +286,12 @@
     "form_error": "Sila isi medan yang diperlukan dengan betul.",
     "offline": "Anda berada di luar talian. Sila periksa sambungan internet anda",
     "choose_delivery_methods": "mesti memilih kaedah penghantaran"
+  ,
+    "salary": "Gaji",
+    "job_type": "Jenis pekerjaan",
+    "job_salary_type": "Jenis gaji",
+    "job_type_error": "perlu memilih jenis pekerjaan",
+    "job_salary_type_error": "perlu memilih jenis gaji"
   },
   "ditchNote": {
     "title": "Memperkenalkan Ditchit - Pasar Tempatan Terbaik!",

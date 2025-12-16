@@ -286,6 +286,12 @@
     "form_error": "Kérjük, helyesen töltse ki a kötelező mezőket.",
     "offline": "Ön offline állapotban van. Kérjük, ellenőrizze internetkapcsolatát",
     "choose_delivery_methods": "ki kell választani a szállítási módokat"
+  ,
+    "salary": "Fizetés",
+    "job_type": "Munkatípus",
+    "job_salary_type": "Fizetéstípus",
+    "job_type_error": "választania kell a munkatípust",
+    "job_salary_type_error": "választania kell a fizetéstípust"
   },
   "ditchNote": {
     "title": "Bemutatjuk a Ditchit - Az Ultimátum Helyi Piacot!",

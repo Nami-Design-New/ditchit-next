@@ -286,6 +286,12 @@
     "form_error": "Vul de verplichte velden correct in.",
     "offline": "Je bent offline. Controleer uw internetverbinding",
     "choose_delivery_methods": "moet bezorgmethoden kiezen"
+  ,
+    "salary": "Salaris",
+    "job_type": "Functietype",
+    "job_salary_type": "Salaristype",
+    "job_type_error": "moet functietype kiezen",
+    "job_salary_type_error": "moet salaristype kiezen"
   },
   "ditchNote": {
     "title": "Maak kennis met Ditchit - De Ultieme Lokale Marktplaats!",

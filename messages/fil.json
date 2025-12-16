@@ -286,6 +286,12 @@
     "form_error": "Mangyaring punan nang tama ang mga kinakailangang patlang.",
     "offline": "Offline ka. Mangyaring suriin ang iyong koneksyon sa internet",
     "choose_delivery_methods": "dapat pumili ng mga pamamaraan ng paghahatid"
+  ,
+    "salary": "Suweldo",
+    "job_type": "Uri ng trabaho",
+    "job_salary_type": "Uri ng suweldo",
+    "job_type_error": "kailangang pumili ng uri ng trabaho",
+    "job_salary_type_error": "kailangang pumili ng uri ng suweldo"
   },
   "ditchNote": {
     "title": "Ipinapakilala ang Ditchit - Ang Pinakamahusay na Lokal na Pamilihan!",

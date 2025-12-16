@@ -286,6 +286,12 @@
     "form_error": "请正确填写必填字段。",
     "offline": "您已离线。请检查您的互联网连接",
     "choose_delivery_methods": "必须选择送货方式"
+  ,
+    "salary": "工资",
+    "job_type": "工作类型",
+    "job_salary_type": "工资类型",
+    "job_type_error": "必须选择工作类型",
+    "job_salary_type_error": "必须选择工资类型"
   },
   "ditchNote": {
     "title": "介绍 Ditchit —— 终极本地市场！",

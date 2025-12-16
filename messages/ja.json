@@ -286,6 +286,12 @@
     "form_error": "必須フィールドに正確に入力してください。",
     "offline": "あなたはオフラインです。インターネット接続を確認してください",
     "choose_delivery_methods": "配送方法を選択する必要があります"
+  ,
+    "salary": "給与",
+    "job_type": "職種",
+    "job_salary_type": "給与の種類",
+    "job_type_error": "職種を選択する必要があります",
+    "job_salary_type_error": "給与の種類を選択する必要があります"
   },
   "ditchNote": {
     "title": "Ditchitのご紹介 - 究極のローカルマーケットプレイス！",

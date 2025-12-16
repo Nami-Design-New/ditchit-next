@@ -73,10 +73,10 @@ export const JOB_SALARY_TYPE = [
     name: "Yearly",
     value: "yearly",
   },
-  {
-    name: "Monthly",
-    value: "monthly",
-  },
+  // {
+  //   name: "Monthly",
+  //   value: "monthly",
+  // },
   {
     name: "Hourly",
     value: "hourly",

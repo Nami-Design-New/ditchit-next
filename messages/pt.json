@@ -286,6 +286,13 @@
     "form_error": "Por favor preencha os campos obrigatórios corretamente.",
     "offline": "Você está off-line. Verifique sua conexão com a Internet",
     "choose_delivery_methods": "deve escolher métodos de entrega"
+  ,
+    "salary": "Salário",
+    "job_type": "Tipo de trabalho",
+    "job_salary_type": "Tipo de salário",
+    "job_type_error": "deve escolher o tipo de trabalho",
+    "job_salary_type_error": "deve escolher o tipo de salário"
+
   },
   "ditchNote": {
     "title": "Apresentando o Ditchit - O Mercado Local Definitivo!",

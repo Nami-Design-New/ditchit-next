@@ -286,6 +286,13 @@
     "form_error": "Ti preghiamo di compilare correttamente i campi richiesti.",
     "offline": "Sei offline. Controlla la tua connessione Internet",
     "choose_delivery_methods": "deve scegliere i metodi di consegna"
+  ,
+    "salary": "Stipendio",
+    "job_type": "Tipo di lavoro",
+    "job_salary_type": "Tipo di stipendio",
+    "job_type_error": "devi scegliere il tipo di lavoro",
+    "job_salary_type_error": "devi scegliere il tipo di stipendio"
+
   },
   "ditchNote": {
     "title": "Presentamos Ditchit - ¡El Mercado Local Definitivo!",

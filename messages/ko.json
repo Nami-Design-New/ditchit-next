@@ -286,6 +286,12 @@
     "form_error": "필수 항목을 정확하게 입력해주세요.",
     "offline": "귀하는 오프라인 상태입니다. 인터넷 연결을 확인해주세요",
     "choose_delivery_methods": "배송 방법을 선택해야 합니다"
+  ,
+    "salary": "급여",
+    "job_type": "직무 유형",
+    "job_salary_type": "급여 유형",
+    "job_type_error": "직무 유형을 선택해야 합니다",
+    "job_salary_type_error": "급여 유형을 선택해야 합니다"
   },
   "ditchNote": {
     "title": "디치잇 소개 - 궁극의 지역 시장!",

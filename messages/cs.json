@@ -286,6 +286,12 @@
     "form_error": "Vyplňte prosím správně požadovaná pole.",
     "offline": "Jste offline. Zkontrolujte prosím své internetové připojení",
     "choose_delivery_methods": "musí zvolit způsob doručení"
+  ,
+    "salary": "Mzda",
+    "job_type": "Typ práce",
+    "job_salary_type": "Typ mzdy",
+    "job_type_error": "musíte zvolit typ práce",
+    "job_salary_type_error": "musíte zvolit typ mzdy"
   },
   "ditchNote": {
     "title": "Představujeme Ditchit - Nejlepší místní tržiště!",

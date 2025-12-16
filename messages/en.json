@@ -285,7 +285,12 @@
     "country": "Country",
     "form_error": "Please fill in the required fields correctly.",
     "offline": "You are offline. Please check your internet connection",
-    "choose_delivery_methods": "must choose delivery methods"
+    "choose_delivery_methods": "must choose delivery methods",
+    "salary": "Salary",
+    "job_type": "Job Type",
+    "job_salary_type": "Salary Type",
+    "job_type_error": "must choose job type",
+    "job_salary_type_error": "must choose salary type"
   },
   "ditchNote": {
     "title": "Introducing Ditchit - The Ultimate Local Marketplace!",

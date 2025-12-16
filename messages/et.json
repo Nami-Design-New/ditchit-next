@@ -286,6 +286,13 @@
     "form_error": "Palun täitke nõutud väljad õigesti.",
     "offline": "Olete võrguühenduseta. Kontrollige oma Interneti-ühendust",
     "choose_delivery_methods": "tuleb valida tarneviisid"
+  ,
+    "salary": "Palk",
+    "job_type": "Töö liik",
+    "job_salary_type": "Palgatüüp",
+    "job_type_error": "peate valima töö liigi",
+    "job_salary_type_error": "peate valima palgatüübi"
+
   },
   "ditchNote": {
     "title": "Tutvustame Ditchit - Parim Kohalik Turg!",

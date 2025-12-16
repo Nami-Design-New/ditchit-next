@@ -286,6 +286,12 @@
     "form_error": "Prašome teisingai užpildyti reikiamus laukus.",
     "offline": "Esate neprisijungęs. Patikrinkite interneto ryšį",
     "choose_delivery_methods": "turi pasirinkti pristatymo būdus"
+  ,
+    "salary": "Alga",
+    "job_type": "Darbo tipas",
+    "job_salary_type": "Algos tipas",
+    "job_type_error": "privalote pasirinkti darbo tipą",
+    "job_salary_type_error": "privalote pasirinkti algos tipą"
   },
   "ditchNote": {
     "title": "Pristatau Ditchit - galutinis vietinis turgus!",

@@ -100,7 +100,7 @@ export default function PriceDetailsStep({
       {type === "hiring" && (
         <>
           <div>
-            <h6 className="font-bold text-sm mb-2">{t("JOB TYPE")}</h6>
+            <h6 className="font-bold text-sm mb-2">{t("job_type")}</h6>
             <div className="flex gap-2 md:flex-row flex-col">
               {JOB_TYPE.map((method) => (
                 <label
@@ -126,14 +126,12 @@ export default function PriceDetailsStep({
             </div>
 
             {jobTypeError && (
-              <p className="text-red-500 mt-2 text-xs">
-                {t("job type is required")}
-              </p>
+              <p className="text-red-500 mt-2 text-xs">{t("job_type_error")}</p>
             )}
           </div>
 
           <div>
-            <h6 className="font-bold text-sm mb-2">{t("JOB TYPE")}</h6>
+            <h6 className="font-bold text-sm mb-2">{t("job_salary_type")}</h6>
             <div className="flex gap-2 md:flex-row flex-col">
               {JOB_SALARY_TYPE.map((method) => (
                 <label
@@ -160,7 +158,7 @@ export default function PriceDetailsStep({
 
             {jobSalaryTypeError && (
               <p className="text-red-500 mt-2 text-xs">
-                {t("job salary type is required")}
+                {t("job_salary_type_error")}
               </p>
             )}
           </div>
@@ -168,7 +166,7 @@ export default function PriceDetailsStep({
       )}
 
       <InputField
-        label={type === "hiring" ? "salary" : t("price")}
+        label={type === "hiring" ? t("salary") : t("price")}
         id="price"
         placeholder="$0.00"
         {...register("price")}

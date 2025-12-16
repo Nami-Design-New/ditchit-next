@@ -286,6 +286,13 @@
     "form_error": "Vui lòng điền chính xác vào các trường bắt buộc.",
     "offline": "Bạn đang ngoại tuyến. Vui lòng kiểm tra kết nối internet của bạn",
     "choose_delivery_methods": "phải chọn phương thức giao hàng"
+  ,
+    "salary": "Lương",
+    "job_type": "Loại công việc",
+    "job_salary_type": "Loại lương",
+    "job_type_error": "phải chọn loại công việc",
+    "job_salary_type_error": "phải chọn loại lương"
+
   },
   "ditchNote": {
     "title": "Giới thiệu Ditchit - Thị trường địa phương tuyệt vời nhất!",

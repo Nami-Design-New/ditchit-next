@@ -286,6 +286,12 @@
     "form_error": "Lūdzu, pareizi aizpildiet obligātos laukus.",
     "offline": "Jūs esat bezsaistē. Lūdzu, pārbaudiet savu interneta savienojumu",
     "choose_delivery_methods": "jāizvēlas piegādes veidi"
+  ,
+    "salary": "Alga",
+    "job_type": "Darba veids",
+    "job_salary_type": "Algas veids",
+    "job_type_error": "jāizvēlas darba veids",
+    "job_salary_type_error": "jāizvēlas algas veids"
   },
   "ditchNote": {
     "title": "Iepazīstinām ar Ditchit - Galīgo Vietējo Tirgu!",

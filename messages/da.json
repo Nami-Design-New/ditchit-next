@@ -286,6 +286,12 @@
     "form_error": "Udfyld venligst de påkrævede felter korrekt.",
     "offline": "Du er offline. Tjek venligst din internetforbindelse",
     "choose_delivery_methods": "skal vælge leveringsmetoder"
+  ,
+    "salary": "Løn",
+    "job_type": "Jobtype",
+    "job_salary_type": "Løntype",
+    "job_type_error": "skal vælge jobtype",
+    "job_salary_type_error": "skal vælge løntype"
   },
   "ditchNote": {
     "title": "Præsentation af Ditchit - Den Ultimative Lokale Markedsplads!",

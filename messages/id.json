@@ -286,6 +286,12 @@
     "form_error": "Silakan isi kolom yang diperlukan dengan benar.",
     "offline": "Anda sedang luring. Silakan periksa koneksi internet Anda",
     "choose_delivery_methods": "harus memilih metode pengiriman"
+  ,
+    "salary": "Gaji",
+    "job_type": "Jenis pekerjaan",
+    "job_salary_type": "Jenis gaji",
+    "job_type_error": "harus memilih jenis pekerjaan",
+    "job_salary_type_error": "harus memilih jenis gaji"
   },
   "ditchNote": {
     "title": "Memperkenalkan Ditchit - Pasar Lokal Terbaik!",

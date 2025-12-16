@@ -286,6 +286,12 @@
     "form_error": "Vul asseblief die vereiste velde korrek in.",
     "offline": "Jy is vanlyn. Gaan asseblief jou internetverbinding na",
     "choose_delivery_methods": "moet afleweringsmetodes kies"
+  ,
+    "salary": "Salaris",
+    "job_type": "Werk tipe",
+    "job_salary_type": "Salaris tipe",
+    "job_type_error": "moet werk tipe kies",
+    "job_salary_type_error": "moet salaris tipe kies"
   },
   "ditchNote": {
     "title": "Bied Ditchit aan - Die Ultieme Plaaslike Markplek!",
