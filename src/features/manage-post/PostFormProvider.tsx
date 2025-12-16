@@ -84,7 +84,7 @@ export default function PostFormProvider({
   const handleSaveRequest = async (data: PostFormData) => {
     const endpoint = post?.id ? `/posts/${post.id}` : "/posts";
     const formData = new FormData();
-    console.log(selectedCategory);
+    console.log(selectedCategory, formData, data);
 
     Object.entries(data).forEach(([key, value]) => {
       if (key === "image" || key === "images") return;
@@ -110,7 +110,9 @@ export default function PostFormProvider({
         formData.append(key, value as string);
       }
     });
-
+    if (type) {
+      formData.append("type", type);
+    }
     if (data.image instanceof File) {
       formData.append("image", data.image);
     }
@@ -125,6 +127,7 @@ export default function PostFormProvider({
     if (post?.id) {
       formData.append("_method", "PUT");
     }
+    console.log("selectedCategory", formData);
 
     return await clientAxios.post(endpoint, formData, {
       headers: { "Content-Type": "multipart/form-data" },

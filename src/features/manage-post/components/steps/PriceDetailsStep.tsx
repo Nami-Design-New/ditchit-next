@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useFormContext, SubmitHandler } from "react-hook-form";
-import { SHIPPING_METHODS } from "@/utils/constants";
+import { JOB_SALARY_TYPE, JOB_TYPE, SHIPPING_METHODS } from "@/utils/constants";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { usePostForm } from "../../PostFormProvider";
@@ -10,6 +10,7 @@ import InputField from "@/components/shared/InputField";
 import BoostAndPublish from "@/components/modals/BoostAndPublish";
 import FormFooter from "../FormFooter";
 import { toast } from "sonner";
+import { useSearchParams } from "next/navigation";
 
 export default function PriceDetailsStep({
   back,
@@ -27,11 +28,20 @@ export default function PriceDetailsStep({
     formState: { errors },
   } = useFormContext<PostFormData>();
 
+  console.log(errors);
+
+  const searchParams = useSearchParams();
+  const type = searchParams.get("type");
+
   const [show, setShow] = useState(false);
   const [deliveryError, setDeliveryError] = useState(false);
+  const [jobTypeError, setJobTypeError] = useState(false);
+  const [jobSalaryTypeError, setJobSalaryTypeError] = useState(false);
   const { savePost, savePromote, isSavingNormal, isSavingPromote } =
     usePostForm();
   const selectedDelivery = watch("delivery_method");
+  const selectedJobType = watch("job_type");
+  const selectedJobSalaryType = watch("job_salary_type");
   const t = useTranslations("manage_post");
 
   const handleNextClick = async (e: React.FormEvent) => {
@@ -48,6 +58,19 @@ export default function PriceDetailsStep({
       return;
     } else {
       setDeliveryError(false);
+    }
+    // condition if hiring
+    if (type == "hiring" && !selectedJobType) {
+      setJobTypeError(true);
+      return;
+    } else {
+      setJobTypeError(false);
+    }
+    if (type == "hiring" && !selectedJobSalaryType) {
+      setJobSalaryTypeError(true);
+      return;
+    } else {
+      setJobSalaryTypeError(false);
     }
 
     if (isValid) {
@@ -74,8 +97,78 @@ export default function PriceDetailsStep({
 
   return (
     <form className="flex flex-col gap-4" onSubmit={handleNextClick}>
+      {type === "hiring" && (
+        <>
+          <div>
+            <h6 className="font-bold text-sm mb-2">{t("JOB TYPE")}</h6>
+            <div className="flex gap-2 md:flex-row flex-col">
+              {JOB_TYPE.map((method) => (
+                <label
+                  key={method.value}
+                  htmlFor={method.value}
+                  className={`w-full rounded-[8px] border cursor-pointer py-3 px-4 text-center shadow-xs transition-all duration-300 ease-in-out hover:bg-[var(--mainColor)] hover:text-white
+                ${
+                  selectedJobType === method.value
+                    ? "bg-[var(--mainColor)] text-white border-[var(--mainColor)]"
+                    : "border-[var(--lightBorderColor)]"
+                }`}
+                >
+                  <input
+                    type="radio"
+                    id={method.value}
+                    value={method.value}
+                    {...register("job_type")}
+                    className="hidden"
+                  />
+                  {method.name}
+                </label>
+              ))}
+            </div>
+
+            {jobTypeError && (
+              <p className="text-red-500 mt-2 text-xs">
+                {t("job type is required")}
+              </p>
+            )}
+          </div>
+
+          <div>
+            <h6 className="font-bold text-sm mb-2">{t("JOB TYPE")}</h6>
+            <div className="flex gap-2 md:flex-row flex-col">
+              {JOB_SALARY_TYPE.map((method) => (
+                <label
+                  key={method.value}
+                  htmlFor={method.value}
+                  className={`w-full rounded-[8px] border cursor-pointer py-3 px-4 text-center shadow-xs transition-all duration-300 ease-in-out hover:bg-[var(--mainColor)] hover:text-white
+                ${
+                  selectedJobSalaryType === method.value
+                    ? "bg-[var(--mainColor)] text-white border-[var(--mainColor)]"
+                    : "border-[var(--lightBorderColor)]"
+                }`}
+                >
+                  <input
+                    type="radio"
+                    id={method.value}
+                    value={method.value}
+                    {...register("job_salary_type")}
+                    className="hidden"
+                  />
+                  {method.name}
+                </label>
+              ))}
+            </div>
+
+            {jobSalaryTypeError && (
+              <p className="text-red-500 mt-2 text-xs">
+                {t("job salary type is required")}
+              </p>
+            )}
+          </div>
+        </>
+      )}
+
       <InputField
-        label={t("price")}
+        label={type === "hiring" ? "salary" : t("price")}
         id="price"
         placeholder="$0.00"
         {...register("price")}
@@ -130,7 +223,7 @@ export default function PriceDetailsStep({
             </label>
           ))}
         </div>
-        
+
         {deliveryError && (
           <p className="text-red-500 mt-2 text-xs">
             {t("choose_delivery_methods")}
@@ -139,7 +232,6 @@ export default function PriceDetailsStep({
       </div>
 
       <FormFooter
-
         back={back}
         nextBtnText={postId ? t("update_post") : t("confirm_publish")}
       />

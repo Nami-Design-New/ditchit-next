@@ -3,7 +3,7 @@ import { z } from "zod";
 const fileOrStringSchema = z.union([z.instanceof(File), z.string()]);
 
 export const postFormDataSchema = z.object({
-  type: z.string(),
+  type: z.string().nullable().optional(),
   category_id: z.number(),
   title: z.string().min(3, "title_validation"),
   description: z.string().min(10, "desc_validation"),
@@ -34,6 +34,8 @@ export const postFormDataSchema = z.object({
     })
   ),
   country_id: z.string().min(1, "country_validation"),
+  job_type: z.string().nullable().optional(),
+  job_salary_type: z.string().nullable().optional(),
 });
 
 export type PostFormData = z.infer<typeof postFormDataSchema>;
