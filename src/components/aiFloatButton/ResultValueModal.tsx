@@ -1,6 +1,11 @@
 "use client";
 
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { CardContent } from "@/components/ui/card";
 import Image from "next/image";
@@ -42,7 +47,7 @@ const ResultValueModal = ({
   const formatPrice = (price: number | null, currency: string | null) => {
     if (price === null) return "N/A";
     const currencySymbol = currency === "USD" ? "$" : currency || "$";
-    return `${currencySymbol}${price.toLocaleString()}`;
+    return ` ${price.toLocaleString()} ${currencySymbol} `;
   };
 
   return (
@@ -50,8 +55,7 @@ const ResultValueModal = ({
       <DialogContent className="sm:max-w-md p-0">
         <CardContent className="p-0">
           <DialogHeader>
-            <DialogTitle>
-            </DialogTitle>
+            <DialogTitle></DialogTitle>
           </DialogHeader>
           {loading ? (
             <div className="w-full h-96 flex items-center justify-center">
@@ -162,7 +166,7 @@ const ResultValueModal = ({
                         const productName = apiData?.product_name || "item";
                         const sliceName = productName
                           ?.split(" ")
-                          .slice(0, 3)
+                          .slice(0, 2)
                           .join(" ");
                         router.push(
                           `/posts?search=${encodeURIComponent(sliceName)}`

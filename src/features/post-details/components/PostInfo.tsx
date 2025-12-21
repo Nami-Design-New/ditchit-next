@@ -148,9 +148,12 @@ export default function PostInfo({ post }: { post: PostDetailsResponse }) {
         </p>
 
         <div className="flex flex-wrap gap-1">
-          <span className="flex justify-center items-center gap-1 bg-[var(--mainColor)] text-[var(--whiteColor)] text-[14px] px-4 py-2 rounded-full">
-            {post.condition}
-          </span>
+          {post?.condition?.length > 0 && (
+            <span className="flex justify-center items-center gap-1 bg-[var(--mainColor)] text-[var(--whiteColor)] text-[14px] px-4 py-2 rounded-full">
+              {post.condition}
+            </span>
+          )}
+
           <span className="flex justify-center items-center gap-1 bg-[var(--mainColor)] text-[var(--whiteColor)] text-[14px] px-4 py-2 rounded-full">
             {post.delivery_method}
           </span>

@@ -57,7 +57,7 @@ export default function PostActions({ post, showActions }: propsTypes) {
       },
     });
   };
-
+  
   return (
     <>
       {!showActions && (

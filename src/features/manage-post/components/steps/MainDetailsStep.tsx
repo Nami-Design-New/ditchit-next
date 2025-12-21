@@ -121,8 +121,11 @@ export default function MainDetailsStep({ next, back, countries }: propTypes) {
   useEffect(() => {
     if (!selectedCategory) return;
 
-    if (selectedCategory.type === "service") {
-      router.replace("?type=service");
+    if (
+      selectedCategory?.type === "product" ||
+      selectedCategory?.type === "service"
+    ) {
+      router.replace("?type=wanted");
     } else if (selectedCategory.type === "job") {
       router.replace("?type=hiring");
     }
@@ -131,7 +134,8 @@ export default function MainDetailsStep({ next, back, countries }: propTypes) {
   return (
     <>
       {" "}
-      {selectedCategory?.type === "product" && (
+      {(selectedCategory?.type === "product" ||
+        selectedCategory?.type === "service") && (
         <div className="flex gap-5 h-32 ">
           <button
             onClick={() => handleClick("wanted")}

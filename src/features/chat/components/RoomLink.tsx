@@ -54,6 +54,8 @@ export default function RoomLink({ room }: { room: Room }) {
     },
   });
 
+  // console.log("room::::", room);
+
   return (
     <Link
       href={`/chats/${room.id}`}
@@ -120,8 +122,8 @@ export default function RoomLink({ room }: { room: Room }) {
           </p>
 
           <div className="flex gap-2">
-            <span className="text-[10px]">{room.latest_message?.time}</span>
-            <span className="text-[10px]">{room.latest_message?.date}</span>
+            <span className="text-[10px]">{room?.latest_message?.time}</span>
+            <span className="text-[10px]">{room?.latest_message?.date}</span>
           </div>
         </div>
 

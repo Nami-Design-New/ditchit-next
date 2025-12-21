@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Category } from "@/types/category";
 import { ListFilter, Search, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,6 +8,7 @@ import { useTranslations } from "next-intl";
 import useUrlFilters from "@/hooks/useFilterParams";
 import AccordionFilter from "./AccordionFilter";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 export default function FilterSideBar({
   categories,
@@ -18,6 +19,13 @@ export default function FilterSideBar({
   const [openFilter, setOpenFilter] = useState(false);
   const [searchValue, setSearchValue] = useState(getParam("search") ?? "");
   const t = useTranslations("common");
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    setSearchValue(searchParams.get("search") ?? "");
+  }, [searchParams]);
+
+  console.log("search value", searchValue);
 
   return (
     <div className="flex flex-col gap-3">
@@ -32,7 +40,6 @@ export default function FilterSideBar({
           type="search"
           name="search"
           id="search"
-          required
           value={searchValue}
           placeholder={t("search")}
           onChange={(e) => setSearchValue(e.target.value)}
