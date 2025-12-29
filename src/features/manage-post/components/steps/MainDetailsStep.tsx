@@ -131,6 +131,8 @@ export default function MainDetailsStep({ next, back, countries }: propTypes) {
     }
   }, [selectedCategory, router]);
 
+  console.log(selectedCategory);
+
   return (
     <>
       {" "}

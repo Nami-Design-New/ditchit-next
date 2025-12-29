@@ -65,7 +65,7 @@ const ChooseValueModal = ({
               <Image
                 width={500}
                 height={500}
-                src="/icons/cameraAi.svg"
+                src="/images/priceOwlAi2.jpeg"
                 alt="AI Chat"
                 className="w-14 h-14 cursor-pointer hover:opacity-80"
               />

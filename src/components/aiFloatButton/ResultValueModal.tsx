@@ -154,7 +154,8 @@ const ResultValueModal = ({
                         //     productName
                         //   )}`
                         // );
-                        router.push(`/create-post?type=sale`);
+                        sessionStorage.setItem("aiSuggestedProduct", "1");
+                        router.push(`/create-post`);
                       }}
                     >
                       {t("sell")}

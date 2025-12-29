@@ -43,6 +43,7 @@ export default async function PostDetails({ params }: PageProps) {
   if (!post) {
     notFound();
   }
+console.log("post " , post);
 
   
   return (

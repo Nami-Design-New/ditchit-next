@@ -76,7 +76,7 @@ const AiFloatButton = () => {
         <Image
           width={500}
           height={500}
-          src="/images/priceOwlAi2.jpeg"
+          src="/images/priceOwlAi.png"
           // src="/icons/aiFloatIcon.svg"
           alt="AI Float Button"
           className="w-18 rounded-xl cursor-pointer hover:opacity-80"

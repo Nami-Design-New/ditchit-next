@@ -217,7 +217,7 @@ export default function EditProfileForm({
                 onChange={(phone) => field.onChange(phone)}
                 enableSearch
                 searchPlaceholder={t("search_country")}
-                inputProps={{ id: "phone", name: "phone", required: true }}
+                inputProps={{ id: "phone", name: "phone", required: false }}
                 inputStyle={{
                   width: "100%",
                   borderRadius: "8px",

@@ -56,7 +56,12 @@ export default function LoginForm() {
           // verifyEmail:res.data.user.email,
         });
         setCookie("verifyEmail", res.data.user.email);
-        router.push("/");
+        if (sessionStorage.getItem("aiSuggestedProduct")) {
+          router.push(`/create-post`);
+          sessionStorage.removeItem("aiSuggestedProduct");
+        } else {
+          router.push("/");
+        }
         toast.success(t("login_success"));
       } else {
         toast.error(res.message);
