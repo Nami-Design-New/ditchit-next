@@ -5,10 +5,25 @@ import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import useGetAdvertiserPosts from "@/features/advertiser/useGetAdvertiserPosts";
 import Image from "next/image";
+// import { useEffect, useState } from "react";
+// import { formatFromNow } from "@/lib/timeStamp/handleTimeStamp";
 
 export default function AdvertiserCard({ id }: { id: string }) {
   const { user } = useGetAdvertiserPosts(id);
   const t = useTranslations("common");
+
+  // const [fromNow, setFromNow] = useState<string>("");
+
+  // useEffect(() => {
+  //   async function loadTimes() {
+  //     const formattedFromNow = await formatFromNow(post?.timestamp);
+
+  //     setFromNow(formattedFromNow);
+  //   }
+
+  //   loadTimes();
+  // }, [post.timestamp]);
+  // console.log("formate from now .", fromNow);
 
   const handleShare = () => {
     if (navigator.share) {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Clock, Flag, Heart, MapPin, Share2 } from "lucide-react";
 import { PostDetailsResponse } from "../types";
 import { useAuthStore } from "@/features/auth/store";
@@ -10,6 +10,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import useStoreFavorites from "@/features/profile/hooks/useStoreFavorites";
 import ReportPost from "@/components/modals/ReportPost";
+import { formatFromNow } from "@/lib/timeStamp/handleTimeStamp";
 
 export default function PostInfo({ post }: { post: PostDetailsResponse }) {
   const optionsToMap = post.options.filter((option) => option.value);
@@ -21,6 +22,20 @@ export default function PostInfo({ post }: { post: PostDetailsResponse }) {
 
   const { token } = useAuthStore();
   const router = useRouter();
+
+  const [fromNow, setFromNow] = useState<string>("");
+
+  useEffect(() => {
+    async function loadTimes() {
+      const formattedFromNow = await formatFromNow(post.timestamp);
+
+      setFromNow(formattedFromNow);
+    }
+
+    loadTimes();
+  }, [post.timestamp]);
+
+  console.log("formate from now .", fromNow);
 
   const handleShare = () => {
     if (navigator.share) {
@@ -151,7 +166,7 @@ export default function PostInfo({ post }: { post: PostDetailsResponse }) {
           </a>
           <div className="flex items-center gap-1 text-[13px] text-[var(--grayColor)]">
             <Clock height={16} width={16} />
-            {post.publishing_duration}
+            {fromNow}
           </div>
         </div>
 

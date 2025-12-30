@@ -1,5 +1,6 @@
 import { Message } from "../types";
 import Image from "next/image";
+import DurationAndTimeUi from "./DurationAndTimeUi";
 
 export default function MessageUI({
   message,
@@ -117,8 +118,7 @@ export default function MessageUI({
       <span
         className={`text-[12px] text-[var(--grayColor)] px-1 flex gap-2 ${message.sender_id !== otherUserId ? "justify-end" : "justify-start"}`}
       >
-        <span>{message.time}</span>
-        <span>{message.duration}</span>
+        <DurationAndTimeUi message={message} otherUserId={otherUserId} />
       </span>
     </div>
   );
