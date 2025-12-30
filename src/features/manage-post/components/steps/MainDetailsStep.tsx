@@ -11,8 +11,8 @@ import { Country } from "@/types/country";
 import { useState, useEffect } from "react";
 import { getCookie } from "@/lib/utils";
 import { getCountries } from "@/services/getCountries";
-import Image from "next/image";
-import { useRouter, useSearchParams } from "next/navigation";
+// import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useCategoryStore } from "../../store";
 
 type propTypes = {
@@ -41,20 +41,20 @@ export default function MainDetailsStep({ next, back, countries }: propTypes) {
     (c) => c.id.toString() === selectedCountryId
   );
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const type = searchParams.get("type"); // النوع الحالي من URL
-  const [selectedTypeBtn, setSelectedTypeBtn] = useState("");
-  const handleClick = (selectedType: string) => {
-    setSelectedTypeBtn(selectedType);
-    router.push(`?type=${selectedType}`);
-  };
+  // const searchParams = useSearchParams();
+  // const type = searchParams.get("type"); // النوع الحالي من URL
+  // const [selectedTypeBtn, setSelectedTypeBtn] = useState("");
+  // const handleClick = (selectedType: string) => {
+  //   setSelectedTypeBtn(selectedType);
+  //   router.push(`?type=${selectedType}`);
+  // };
+  
+  // const buttonClasses = (btnType: string) =>
+  //   `border border-[var(--lightBorderColor)] !rounded-[14px] aspect-square w-[calc(50%-2px)] flex flex-col justify-center items-center gap-2 text-[14px] capitalize px-4 py-2 ${
+  //     type === btnType ? "bg-green-500 text-white" : "text-[var(--darkColor)]"
+  //   }`;
+  
   const { selectedCategory } = useCategoryStore();
-
-  const buttonClasses = (btnType: string) =>
-    `border border-[var(--lightBorderColor)] !rounded-[14px] aspect-square w-[calc(50%-2px)] flex flex-col justify-center items-center gap-2 text-[14px] capitalize px-4 py-2 ${
-      type === btnType ? "bg-green-500 text-white" : "text-[var(--darkColor)]"
-    }`;
-
   const t = useTranslations("manage_post");
   const [countryId, setCountryId] = useState<string>(
     getCookie("countryId") || watch("country_id") || ""
@@ -120,15 +120,19 @@ export default function MainDetailsStep({ next, back, countries }: propTypes) {
 
   useEffect(() => {
     if (!selectedCategory) return;
-
-    if (
-      selectedCategory?.type === "product" ||
-      selectedCategory?.type === "service"
-    ) {
-      router.replace("?type=wanted");
-    } else if (selectedCategory.type === "job") {
-      router.replace("?type=hiring");
+    if (selectedCategory?.type) {
+      router.replace(`?type=${selectedCategory?.type}`);
     }
+    // if (
+    //   selectedCategory?.type === "product" ||
+    //   selectedCategory?.type === "service"
+    // ) {
+    //   router.replace("?type=sell");
+    // } else if (selectedCategory.type === "job") {
+    //   router.replace("?type=hiring");
+    // } else if (selectedCategory.type === "wanted") {
+    //   router.replace("?type=wanted");
+    // }
   }, [selectedCategory, router]);
 
   console.log(selectedCategory);
@@ -136,7 +140,7 @@ export default function MainDetailsStep({ next, back, countries }: propTypes) {
   return (
     <>
       {" "}
-      {(selectedCategory?.type === "product" ||
+      {/* {(selectedCategory?.type === "product" ||
         selectedCategory?.type === "service") && (
         <div className="flex gap-5 h-32 ">
           <button
@@ -167,7 +171,7 @@ export default function MainDetailsStep({ next, back, countries }: propTypes) {
             <span>{"sell"}</span>
           </button>
         </div>
-      )}
+      )} */}
       <form className="flex flex-col gap-[16px]" onSubmit={handleSubmit}>
         <div className="flex gap-4 md:flex-row flex-col">
           <MediaUpload

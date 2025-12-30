@@ -119,10 +119,22 @@ export default function PostInfo({ post }: { post: PostDetailsResponse }) {
               <span className="text-[12px]">Promoted</span>
             </span>
           )}
-
-          <span className="px-4 flex items-center py-1 bg-[var(--mainColor)] text-[var(--whiteColor)] rounded-full w-fit text-[14px]">
-            {post.type}
-          </span>
+          {/* wanted translate */}
+          {post.type === "wanted" && (
+            <span className="px-4 flex items-center py-1 bg-[var(--mainColor)] text-[var(--whiteColor)] rounded-full w-fit text-[14px]">
+              {t("wanted")}
+            </span>
+          )}
+          {post.type === "sale" && (
+            <span className="px-4 flex items-center py-1 bg-[var(--mainColor)] text-[var(--whiteColor)] rounded-full w-fit text-[14px]">
+              {t("sale")}
+            </span>
+          )}
+          {post.type === "job" && (
+            <span className="px-4 flex items-center py-1 bg-[var(--mainColor)] text-[var(--whiteColor)] rounded-full w-fit text-[14px]">
+              {t("hiring")}
+            </span>
+          )}
         </div>
 
         <h3 className="text-[20px] font-bold">{post.title}</h3>

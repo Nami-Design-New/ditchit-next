@@ -198,6 +198,7 @@ export default function LanguagesAndCountries({
   function revalidateQueries() {
     queryClient.clear();
   }
+console.log("selected country" , selectedCountryFromApi);
 
   return (
     <DropdownMenu>

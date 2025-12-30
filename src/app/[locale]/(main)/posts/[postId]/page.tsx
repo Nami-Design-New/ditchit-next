@@ -45,7 +45,6 @@ export default async function PostDetails({ params }: PageProps) {
   }
 console.log("post " , post);
 
-  
   return (
     <>
       <PageBanner

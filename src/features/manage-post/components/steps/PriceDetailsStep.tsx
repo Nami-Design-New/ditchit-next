@@ -60,13 +60,13 @@ export default function PriceDetailsStep({
       setDeliveryError(false);
     }
     // condition if hiring
-    if (type == "hiring" && !selectedJobType) {
+    if (type == "job" && !selectedJobType) {
       setJobTypeError(true);
       return;
     } else {
       setJobTypeError(false);
     }
-    if (type == "hiring" && !selectedJobSalaryType) {
+    if (type == "job" && !selectedJobSalaryType) {
       setJobSalaryTypeError(true);
       return;
     } else {
@@ -97,7 +97,7 @@ export default function PriceDetailsStep({
 
   return (
     <form className="flex flex-col gap-4" onSubmit={handleNextClick}>
-      {type === "hiring" && (
+      {type === "job" && (
         <>
           <div>
             <h6 className="font-bold text-sm mb-2">{t("job_type")}</h6>

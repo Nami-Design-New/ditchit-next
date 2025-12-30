@@ -1,22 +1,53 @@
-import { API_URL } from "@/utils/constants";
+// import { API_URL } from "@/utils/constants";
 
-export async function getOneCountry(lang: string, countryId: string) {
+// export async function getOneCountry(lang: string, countryId: string) {
+//   if (!countryId) return null;
+
+//   const response = await fetch(`${API_URL}/main/country/${countryId}`, {
+//     method: "GET",
+//     headers: {
+//       lang: lang === "zh" ? "zh-CN" : lang === "pt" ? "pt-BR" : lang,
+//       country: countryId || "",
+//     },
+//     cache: "no-store",
+//   });
+
+//   if (!response.ok) {
+//     const errorText = await response.text();
+//     console.error("Error fetching country:", errorText);
+//     throw new Error("Failed to fetch country");
+//   }
+
+//   return response.json();
+// }
+
+import { API_URL } from "@/utils/constants";
+import { cache } from "react";
+
+/**
+ * cached on server per (lang + countryId)
+ */
+export const getOneCountry = cache(async (lang: string, countryId: string) => {
   if (!countryId) return null;
 
   const response = await fetch(`${API_URL}/main/country/${countryId}`, {
-    method: "GET",
     headers: {
       lang: lang === "zh" ? "zh-CN" : lang === "pt" ? "pt-BR" : lang,
-      country: countryId || "",
+      country: countryId,
     },
-    cache: "no-store",
+    next: { revalidate: 60 * 60 }, // ✅ cache 1 hour
   });
+
+  if (response.status === 429) {
+    console.error("Rate limit exceeded for getOneCountry");
+    return null;
+  }
 
   if (!response.ok) {
     const errorText = await response.text();
     console.error("Error fetching country:", errorText);
-    throw new Error("Failed to fetch country");
+    return null;
   }
 
   return response.json();
-}
+});
