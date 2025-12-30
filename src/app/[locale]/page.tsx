@@ -60,7 +60,7 @@ export default async function Home() {
 
   // 🔴 LOG: cookies access
   console.log("🟧 Reading cookies");
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
 
   // 🔴 LOG: auth fetch
   console.log("🟨 Fetching profile");
