@@ -6,6 +6,8 @@ import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import PostActions from "./PostActions";
+import { formatFromNow } from "@/lib/timeStamp/handleTimeStamp";
+import { useEffect, useState } from "react";
 
 export default function PostCard({
   post,
@@ -15,7 +17,18 @@ export default function PostCard({
   showActions: boolean;
 }) {
   const t = useTranslations("post");
-  
+
+  const [fromNow, setFromNow] = useState<string>("");
+
+  useEffect(() => {
+    async function loadTimes() {
+      const formattedFromNow = await formatFromNow(post.timestamp);
+      setFromNow(formattedFromNow);
+    }
+
+    loadTimes();
+  }, [post.timestamp]);
+
   return (
     <div className="relative flex flex-col gap-1 h-full rounded-2xl border border-[var(--lightBorderColor)] bg-[var(--whiteColor)] transition-all">
       <PostActions post={post} showActions={showActions} />
@@ -63,7 +76,8 @@ export default function PostCard({
 
         <div className="flex items-center gap-1 text-sm text-[var(--grayColor)]">
           <Clock width={16} height={16} />
-          <span>{post.publishing_duration}</span>
+          <span>{fromNow}</span>
+          {/* <span>{post.publishing_duration}</span> */}
         </div>
 
         <Link
@@ -106,7 +120,9 @@ export default function PostCard({
 
           <div className="text-lg font-bold">
             {/* <span>$ {post.price.toFixed(2)}</span> */}
-            <span>{post.country?.symbol || '$'} {post.price.toFixed(2)}</span>
+            <span>
+              {post.country?.symbol || "$"} {post.price.toFixed(2)}
+            </span>
           </div>
         </div>
       </div>

@@ -44,14 +44,41 @@ const ChooseValueModal = ({
     }
   };
 
+  // const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   const file = event.target.files?.[0];
+  //   if (file && file.type.startsWith("image/")) {
+  //     onImageSelect(file);
+  //   } else {
+  //     toast.error("Please select a valid image file");
+  //   }
+  //   // Reset input value so same file can be selected again
+  //   event.target.value = "";
+  // };
+
+  const MAX_IMAGE_SIZE = 2 * 1024 * 1024; // 5MB
+
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    if (file && file.type.startsWith("image/")) {
-      onImageSelect(file);
-    } else {
-      toast.error("Please select a valid image file");
+
+    if (!file) return;
+
+    // check type
+    if (!file.type.startsWith("image/")) {
+      toast.error(t("select_available_image"));
+      event.target.value = "";
+      return;
     }
-    // Reset input value so same file can be selected again
+
+    // check size
+    if (file.size > MAX_IMAGE_SIZE) {
+      toast.error(t("image_size"));
+      event.target.value = "";
+      return;
+    }
+
+    onImageSelect(file);
+
+    // Reset input so same file can be selected again
     event.target.value = "";
   };
 

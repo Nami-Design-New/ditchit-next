@@ -53,9 +53,11 @@ export default function LoginForm() {
           address: res.data.user.address,
           countryId: res.data.user.country.id,
           country: res.data.user.country.code,
+          // symbol: res.data.user.country.symbol,
           // verifyEmail:res.data.user.email,
         });
         setCookie("verifyEmail", res.data.user.email);
+        setCookie("symbol", res.data.user.country.symbol);
         if (sessionStorage.getItem("aiSuggestedProduct")) {
           router.push(`/create-post`);
           sessionStorage.removeItem("aiSuggestedProduct");

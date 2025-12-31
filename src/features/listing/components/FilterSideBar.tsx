@@ -99,7 +99,7 @@ export default function FilterSideBar({
         href={"/posts"}
         className=" flex items-center justify-center py-3  mt-auto hover:scale-105"
       >
-        Remove Filter
+        {t("remove_filter")}
       </Link>
     </div>
   );

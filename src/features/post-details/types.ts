@@ -34,10 +34,11 @@ export interface PostDetailsResponse {
   date: string;
   time: string;
   publishing_duration: string;
+  timestamp: number;
   country?: {
     id: number;
     title?: string;
-    symbol?:string;
+    symbol?: string;
   };
 }
 

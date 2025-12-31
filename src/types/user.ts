@@ -11,11 +11,12 @@ export interface User {
   longitude: number;
   created_from: string;
   country_id: string | null;
-  country:{
-    flag:string
-    id:number
-    code:string,
-    title: string
-    symbol: string
-  }
+  timestamp: number;
+  country: {
+    flag: string;
+    id: number;
+    code: string;
+    title: string;
+    symbol: string;
+  };
 }

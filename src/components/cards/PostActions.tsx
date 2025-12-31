@@ -57,7 +57,7 @@ export default function PostActions({ post, showActions }: propsTypes) {
       },
     });
   };
-  
+
   return (
     <>
       {!showActions && (
@@ -72,7 +72,7 @@ export default function PostActions({ post, showActions }: propsTypes) {
 
       {!showActions && (
         <span className="absolute top-4 end-4 z-20 flex py-1 px-3 items-center justify-center rounded-full text-[12px] text-white bg-[var(--mainColor)]">
-          {post.type}
+          {post.type === "job" ? "hiring" : post?.type}
         </span>
       )}
 

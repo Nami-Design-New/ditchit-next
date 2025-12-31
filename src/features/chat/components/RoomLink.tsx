@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useChatStore } from "../store";
 import { Room } from "../types";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -28,6 +28,7 @@ import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import clsx from "clsx";
 import ConfirmModal from "@/components/modals/ConfirmModal";
+import { formatDate, formatTime } from "@/lib/timeStamp/handleTimeStamp";
 
 export default function RoomLink({ room }: { room: Room }) {
   const params = useParams();
@@ -39,6 +40,20 @@ export default function RoomLink({ room }: { room: Room }) {
   const t = useTranslations("chat");
 
   const [showConfirm, setShowConfirm] = useState<boolean>(false);
+
+  const [time, setTime] = useState<string>("");
+  const [date, setDate] = useState<string>("");
+
+  useEffect(() => {
+    async function loadTimes() {
+      const formattedTime = await formatTime(room?.latest_message?.timestamp);
+      const formattedDate = await formatDate(room?.latest_message?.timestamp);
+
+      setTime(formattedTime);
+      setDate(formattedDate);
+    }
+    loadTimes();
+  }, [room?.latest_message?.timestamp]);
 
   const { mutate: deleteRoom, isPending } = useMutation({
     mutationFn: () => deleteRoomAction(room.id),
@@ -122,8 +137,8 @@ export default function RoomLink({ room }: { room: Room }) {
           </p>
 
           <div className="flex gap-2">
-            <span className="text-[10px]">{room?.latest_message?.time}</span>
-            <span className="text-[10px]">{room?.latest_message?.date}</span>
+            <span className="text-[10px]">{time}</span>
+            <span className="text-[10px]">{date}</span>
           </div>
         </div>
 

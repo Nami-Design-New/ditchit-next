@@ -95,7 +95,10 @@
     "unable_identify": "Unable to identify product. Please try with a clearer image.",
     "sell": "Sell",
     "list_similar": "List Similar",
-    "avg_price": "Average prices:"
+    "avg_price": "Average prices:",
+    "remove_filter": "Remove Filter",
+    "image_size": "Image size must be less than 2MB",
+    "select_available_image": "Please select a valid image file"
   },
   "error": {
     "somthing_went_wrong": "Oops! Something went wrong",
@@ -156,7 +159,7 @@
     "questions": "Questions",
     "make_offer": "Make Offer",
     "add_your_offer": "add your offer...",
-    "have_offer": "I have an offer for {offer} $",
+    "have_offer": "I have an offer for {offer} ",
     "shared_location": "Shared Location",
     "audio": "Audio",
     "photo": "Photo",
@@ -290,7 +293,13 @@
     "job_type": "Job Type",
     "job_salary_type": "Salary Type",
     "job_type_error": "must choose job type",
-    "job_salary_type_error": "must choose salary type"
+    "job_salary_type_error": "must choose salary type",
+    "wanted": "Wanted",
+    "sale": "Sale",
+    "hiring": "Hiring",
+    "local_shipping": "Local + Shipping",
+    "local": "Local",
+    "shipping": "Shipping"
   },
   "ditchNote": {
     "title": "Introducing Ditchit - The Ultimate Local Marketplace!",

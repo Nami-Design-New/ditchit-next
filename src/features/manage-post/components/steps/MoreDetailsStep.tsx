@@ -43,7 +43,7 @@ export default function MoreDetailsStep({
   return (
     <form className="flex flex-col gap-[16px]" onSubmit={handleSubmit}>
       {/* {selectedCategory?.is_condition && ( */}
-      {selectedCategory?.type == "product" && (
+      {selectedCategory?.is_condition && (
         <Controller
           name="condition"
           control={control}

@@ -28,7 +28,8 @@ export interface Post {
   date: string;
   time: string;
   publishing_duration: string;
-  country:{
+  country: {
     symbol: string;
-  }
+  };
+  timestamp: number;
 }
