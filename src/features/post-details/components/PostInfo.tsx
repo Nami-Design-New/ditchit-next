@@ -35,7 +35,7 @@ export default function PostInfo({ post }: { post: PostDetailsResponse }) {
     loadTimes();
   }, [post.timestamp]);
 
-  console.log("formate from now .", fromNow);
+  // console.log("formate from now .", fromNow);
 
   const handleShare = () => {
     if (navigator.share) {
