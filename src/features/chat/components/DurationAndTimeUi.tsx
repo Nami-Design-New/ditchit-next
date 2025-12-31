@@ -25,6 +25,7 @@ const DurationAndTimeUi = ({
 
     loadTimes();
   }, [message?.timestamp]);
+
   return (
     <span
       className={`text-[12px] text-[var(--grayColor)] px-1 flex gap-2 ${message.sender_id !== otherUserId ? "justify-end" : "justify-start"}`}

@@ -5,25 +5,28 @@ import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import useGetAdvertiserPosts from "@/features/advertiser/useGetAdvertiserPosts";
 import Image from "next/image";
-// import { useEffect, useState } from "react";
-// import { formatFromNow } from "@/lib/timeStamp/handleTimeStamp";
+import { useEffect, useState } from "react";
+import { formatFromNow } from "@/lib/timeStamp/handleTimeStamp";
 
 export default function AdvertiserCard({ id }: { id: string }) {
   const { user } = useGetAdvertiserPosts(id);
   const t = useTranslations("common");
 
-  // const [fromNow, setFromNow] = useState<string>("");
+  const [fromNow, setFromNow] = useState<string>("");
 
-  // useEffect(() => {
-  //   async function loadTimes() {
-  //     const formattedFromNow = await formatFromNow(post?.timestamp);
+  useEffect(() => {
+    async function loadTimes() {
+      if (!user?.timestamp) {
+        setFromNow("");
+        return;
+      }
 
-  //     setFromNow(formattedFromNow);
-  //   }
+      const formattedFromNow = await formatFromNow(user.timestamp);
+      setFromNow(formattedFromNow);
+    }
 
-  //   loadTimes();
-  // }, [post.timestamp]);
-  // console.log("formate from now .", fromNow);
+    loadTimes();
+  }, [user?.timestamp]);
 
   const handleShare = () => {
     if (navigator.share) {
@@ -69,7 +72,7 @@ export default function AdvertiserCard({ id }: { id: string }) {
         </h3>
 
         <span className="text-[var(--grayColor)] text-[13px]">
-          {t("member")} : {user?.created_from}
+          {t("member")} : {fromNow}
         </span>
 
         <div className="flex items-center justify-center gap-1 text-[13px] text-[var(--grayColor)] [text-wrap:balance]">

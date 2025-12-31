@@ -144,7 +144,7 @@ import { useAuthStore } from "@/features/auth/store";
 
 export default function LanguagesAndCountries({
   countries,
-  selectedCountryFromApi
+  selectedCountryFromApi,
   // profileData,
 }: {
   countries: Country[];
@@ -161,13 +161,13 @@ export default function LanguagesAndCountries({
 
   const [currentCountryFlag, setCurrentCountryFlag] = useState<string>(
     selectedCountryFromApi?.flag ?? "/placeholder-flag.png"
-  );  
+  );
 
   useEffect(() => {
     const countryFromCookie = getCookie("countryId");
     let selectedCountry: Country | undefined;
     // console.log("profileData it is changed" , profileData);
-    
+
     if (user && countryFromCookie) {
       // user + cookie → use cookie
       selectedCountry = countries.find(
@@ -175,9 +175,7 @@ export default function LanguagesAndCountries({
       );
     } else if (user && !countryFromCookie) {
       // user + no cookie → use user's profile country
-      selectedCountry = countries.find(
-        (c) => c.id === Number(user.country_id)
-      );
+      selectedCountry = countries.find((c) => c.id === Number(user.country_id));
     } else if (!user && countryFromCookie) {
       // no user + cookie → use cookie
       selectedCountry = countries.find(
@@ -187,9 +185,13 @@ export default function LanguagesAndCountries({
       // no user + no cookie → default to US
       selectedCountry = countries.find((c) => c.code === "US");
     }
-    
-    setCurrentCountryFlag(selectedCountryFromApi?.flag ?? selectedCountry?.flag ?? "/placeholder-flag.png");
-  }, [countries, user , selectedCountryFromApi]);
+
+    setCurrentCountryFlag(
+      selectedCountryFromApi?.flag ??
+        selectedCountry?.flag ??
+        "/placeholder-flag.png"
+    );
+  }, [countries, user, selectedCountryFromApi]);
 
   function changeLang(newLang: string) {
     return `/${newLang}${pathname}${queryString ? `?${queryString}` : ""}`;
@@ -198,7 +200,7 @@ export default function LanguagesAndCountries({
   function revalidateQueries() {
     queryClient.clear();
   }
-console.log("selected country" , selectedCountryFromApi);
+  // console.log("selected country", selectedCountryFromApi);
 
   return (
     <DropdownMenu>

@@ -135,21 +135,12 @@ export default function PostInfo({ post }: { post: PostDetailsResponse }) {
             </span>
           )}
           {/* wanted translate */}
-          {post.type === "wanted" && (
-            <span className="px-4 flex items-center py-1 bg-[var(--mainColor)] text-[var(--whiteColor)] rounded-full w-fit text-[14px]">
-              {t("wanted")}
-            </span>
-          )}
-          {post.type === "sale" && (
-            <span className="px-4 flex items-center py-1 bg-[var(--mainColor)] text-[var(--whiteColor)] rounded-full w-fit text-[14px]">
-              {t("sale")}
-            </span>
-          )}
-          {post.type === "job" && (
-            <span className="px-4 flex items-center py-1 bg-[var(--mainColor)] text-[var(--whiteColor)] rounded-full w-fit text-[14px]">
-              {t("hiring")}
-            </span>
-          )}
+
+          <span className="px-4 flex items-center py-1 bg-[var(--mainColor)] text-[var(--whiteColor)] rounded-full w-fit text-[14px]">
+            {post.type === "job" && t("hiring")}
+            {post.type === "wanted" && t("wanted")}
+            {post.type === "sale" && t("sale")}
+          </span>
         </div>
 
         <h3 className="text-[20px] font-bold">{post.title}</h3>
@@ -177,12 +168,14 @@ export default function PostInfo({ post }: { post: PostDetailsResponse }) {
         <div className="flex flex-wrap gap-1">
           {post?.condition?.length > 0 && (
             <span className="flex justify-center items-center gap-1 bg-[var(--mainColor)] text-[var(--whiteColor)] text-[14px] px-4 py-2 rounded-full">
-              {post.condition}
+              {post.condition === "new" ? t("new") : t("used")}
             </span>
           )}
 
           <span className="flex justify-center items-center gap-1 bg-[var(--mainColor)] text-[var(--whiteColor)] text-[14px] px-4 py-2 rounded-full">
-            {post.delivery_method}
+            {post.delivery_method === "Local + Shipping" && t("local_shipping")}
+            {post.delivery_method === "local" && t("local")}
+            {post.delivery_method === "shipping" && t("shipping")}
           </span>
           {post.firm_price && (
             <span className="flex justify-center items-center gap-1 bg-[var(--mainColor)] text-[var(--whiteColor)] text-[14px] px-4 py-2 rounded-full">

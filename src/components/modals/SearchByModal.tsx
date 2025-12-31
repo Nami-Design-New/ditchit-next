@@ -321,6 +321,7 @@ export default function SearchByModal({
       // Save current country selection
       setCookie("countryId", selectedCountry);
       setCookie("country", countryData?.code || "");
+      setCookie("symbol", countryData?.symbol || "");
 
       handleClose();
     });

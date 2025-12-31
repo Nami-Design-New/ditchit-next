@@ -28,7 +28,7 @@ export default function PriceDetailsStep({
     formState: { errors },
   } = useFormContext<PostFormData>();
 
-  console.log(errors);
+  // console.log(errors);
 
   const searchParams = useSearchParams();
   const type = searchParams.get("type");
@@ -166,7 +166,7 @@ export default function PriceDetailsStep({
       )}
 
       <InputField
-        label={type === "hiring" ? t("salary") : t("price")}
+        label={type === "job" ? t("salary") : t("price")}
         id="price"
         placeholder="$0.00"
         {...register("price")}

@@ -95,7 +95,10 @@
     "unable_identify": "تعذر تحديد المنتج. يُرجى المحاولة باستخدام صورة أوضح",
     "sell": "بيع",
     "list_similar": "عرض منتجات مشابهة",
-    "avg_price": "متوسط ​​الأسعار:"
+    "avg_price": "متوسط ​​الأسعار:",
+    "remove_filter": "مسح الفلتر",
+    "image_size": "يجب ألا يتجاوز حجم الصورة 2 ميجابايت",
+    "select_available_image": "يرجى اختيار ملف صورة صالح"
   },
   "error": {
     "somthing_went_wrong": "عذرًا! حدث خطأ ما",
@@ -156,7 +159,7 @@
     "questions": "أسئلة",
     "make_offer": "قدّم عرضاً",
     "add_your_offer": "أضف عرضك...",
-    "have_offer": "لدي عرض بقيمة {offer} دولار",
+    "have_offer": "لدي عرض بقيمة {offer} ",
     "shared_location": "الموقع المشترك",
     "audio": "صوت",
     "photo": "صورة",
@@ -293,7 +296,10 @@
     "job_salary_type_error": "يجب اختيار نوع الراتب",
     "wanted": "مطلوب",
     "sale": "بيع",
-    "hiring": "توظيف"
+    "hiring": "توظيف",
+    "local_shipping": "محلي + شحن",
+    "local": "محلي",
+    "shipping": "شحن"
   },
   "ditchNote": {
     "title": "أهلاً بكم في Ditchit - السوق المحلي الأمثل!",

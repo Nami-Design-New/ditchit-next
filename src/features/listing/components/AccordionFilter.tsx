@@ -4,7 +4,7 @@ import Categoryfilter from "./Categoryfilter";
 import PriceFilter from "./PriceFilter";
 import SortBy from "./SortBy";
 import Condition from "./Condition";
-import Type from "./Type";
+// import Type from "./Type";
 
 export default function AccordionFilter({
   categories,
@@ -21,7 +21,7 @@ export default function AccordionFilter({
       <SortBy />
       <Condition />
       <Categoryfilter categories={categories} />
-      <Type />
+      {/* <Type /> */}
       <PriceFilter />
     </Accordion>
   );

@@ -48,7 +48,7 @@ export default function PostsList() {
   }, [fetchNextPage, hasNextPage, isFetchingNextPage]);
 
   return (
-    <section className="flex flex-wrap ">
+    <section className="flex flex-wrap">
       <div className="w-full p-2 relative mb-4">
         <input
           placeholder={t("common.search")}

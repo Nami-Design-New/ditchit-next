@@ -47,7 +47,7 @@ export default function PostFormProvider({
     resolver: zodResolver(postFormDataSchema),
     mode: "onChange",
     defaultValues: {
-      type: post?.type || type,
+      // type: post?.type || type,
       category_id: post?.category.id || 0,
 
       image: post?.image || undefined,

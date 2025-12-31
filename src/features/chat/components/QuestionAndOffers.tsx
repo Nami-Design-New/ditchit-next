@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MessagePayload } from "../types";
 import { useTranslations } from "next-intl";
 import useSendMessage from "../useSendMessage";
+import { getCookie } from "@/lib/utils";
 
 export default function QuestionAndOffers({
   questions,
@@ -37,8 +38,8 @@ export default function QuestionAndOffers({
     sendMessageMutation(formData);
     setActiveTab(null);
   };
-  console.log("questions :" , questions);
-  
+  console.log("questions :", questions);
+
   return (
     <div className="flex bg-white rounded-[12px] p-2 text-center relative gap-2">
       <button
@@ -124,7 +125,9 @@ export default function QuestionAndOffers({
                 onSubmit={(e) => {
                   e.preventDefault();
                   handleSubmit(
-                    t("have_offer", { offer: message.message || "" })
+                    t("have_offer", {
+                      offer: `${message.message} ${getCookie("symbol")}` || "",
+                    })
                   );
                 }}
               >

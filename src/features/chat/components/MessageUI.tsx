@@ -9,9 +9,8 @@ export default function MessageUI({
   message: Message;
   otherUserId: number;
 }) {
-  {
-    console.log(message);
-  }
+  // console.log(message);
+
   return (
     <div className="flex flex-col gap-1">
       <div
