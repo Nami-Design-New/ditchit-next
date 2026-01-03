@@ -14,14 +14,3 @@
 //     dayjs.locale("en");
 //   }
 // }
-
-import dayjs from "dayjs";
-import { useEffect } from "react";
-
-export function useDayjsLocale(lang: string) {
-  useEffect(() => {
-    import(`dayjs/locale/en`)
-      .then(() => dayjs.locale('en'))
-      .catch(() => dayjs.locale("en"));
-  }, [lang]);
-}
